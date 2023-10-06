@@ -1,0 +1,30 @@
+<h1 class="text-center mb-4">Uploaded Files</h1>
+
+<div class="container mt-5 shadow p-3 mb-5 bg-white rounded">
+    <div class="row justify-content-center">
+        <table>
+            <thead>
+                <tr>
+                    <th>Filename</th>
+
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% files.forEach(function(file) { %>
+                    <tr>
+                        <td>
+                            <%= file.filename %>
+                        </td>
+
+                        <td>
+                            <a href="/csv/<%= file._id %>">View</a>
+                            <span>&nbsp;&nbsp;</span>
+                            <a style="color: red;" href="/csv/delete/<%= file._id %>">Delete</a>
+                        </td>
+                    </tr>
+                    <% }); %>
+            </tbody>
+        </table>
+    </div>
+</div>
